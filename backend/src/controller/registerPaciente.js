@@ -119,6 +119,7 @@ registerPacienteController.verifyCode = async (req, res) => {
             address,
             phoneEmergencyContacts,
             profilePhoto,
+            public_id,
             isVerified: true,
         })
 

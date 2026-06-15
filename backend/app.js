@@ -5,6 +5,7 @@ import especilidadRoutes from "./src/routes/especilidad.js"
 import citaRoutes from "./src/routes/cita.js"
 import expedienteRoutes from "./src/routes/expediente.js"
 import equipoRoutes from "./src/routes/equipo.js"
+import loginPacienteRoutes from "./src/routes/loginPaciente.js"
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -19,5 +20,6 @@ app.use("/api/especilidad", especilidadRoutes);
 app.use("/api/cita", citaRoutes);
 app.use("/api/expediente", expedienteRoutes);
 app.use("/api/equipo", equipoRoutes);
+app.use("/api/login", loginPacienteRoutes);
 
 export default app;
