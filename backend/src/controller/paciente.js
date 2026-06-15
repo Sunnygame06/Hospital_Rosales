@@ -26,7 +26,7 @@ pacienteController.updatePaciente = async (req, res) => {
             address,
             phoneEmergencyContacts,
             isVerified
-        }= req.body;
+        } = req.body;
 
         const pacienteFound = await pacienteModel.findById(req.params.id)
 
