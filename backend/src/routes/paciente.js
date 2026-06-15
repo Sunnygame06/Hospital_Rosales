@@ -1,10 +1,13 @@
-import express from "express"
-import registerPacienteController from "../controller/registerPaciente.js"
+import express from "express";
+import pacienteController from "../controller/paciente.js";
 import upload from "../utils/cloudinaryConfig.js"
 
 const router = express.Router();
 
-router.route("/").post(upload.single("profilePhoto"), registerPacienteController.register)
-router.route("/codigo", registerPacienteController.verifyCode)
+router.route("/").get(pacienteController.getPacientes);
+
+router.route("/:id")
+    .put(upload.single("profilePhoto"), pacienteController.updatePaciente)
+    .delete(pacienteController.deletePaciente);
 
 export default router;

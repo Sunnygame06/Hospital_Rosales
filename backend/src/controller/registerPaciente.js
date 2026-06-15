@@ -13,6 +13,7 @@ registerPacienteController.register = async(req, res)=> {
         const {
             name,
             lastName,
+            email,
             password,
             birthDate,
             phone,
@@ -36,6 +37,7 @@ registerPacienteController.register = async(req, res)=> {
             randomCode,
             name,
             lastName,
+            email,
             password: passwordHashed,
             birthDate,
             phone,
@@ -44,7 +46,6 @@ registerPacienteController.register = async(req, res)=> {
             profilePhoto: req.file.path,
             public_id: req.file.filename,
             isVerified,
-            loginAttempts,
         },
         config.JWT.secret,
         {expiresIn: "15m"});
@@ -93,6 +94,7 @@ registerPacienteController.verifyCode = async (req, res) => {
             randomCode: storedCode,
             name,
             lastName,
+            email,
             password,
             birthDate,
             phone,
@@ -110,6 +112,7 @@ registerPacienteController.verifyCode = async (req, res) => {
         const newPaciente = pacienteModel({
             name,
             lastName,
+            email,
             password,
             birthDate,
             phone,

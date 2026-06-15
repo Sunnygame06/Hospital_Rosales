@@ -1,6 +1,7 @@
 /*
     name,
     lastName,
+    email
     password
     birthDate
     phone
@@ -17,6 +18,7 @@ import {Schema, model} from "mongoose"
 const pacienteSchema = new Schema({
     name: {type: String},
     lastName: {type: String},
+    email: {type: String},
     password: {type: String},
     birthDate: {type: Date},
     phone: {type: String},
@@ -24,7 +26,8 @@ const pacienteSchema = new Schema({
     phoneEmergencyContacts: 
         [{ 
             phone: {type: String}, 
-            nameEmergencyContact: {type: String}
+            nameEmergencyContact: {type: String},
+            _id: false
         }],
     profilePhoto: {type: String},
     public_id: {type: String},
